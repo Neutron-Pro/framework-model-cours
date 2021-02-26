@@ -23,5 +23,14 @@
             </p>
         </div>
 
+        <?php foreach ($users as $user): ?>
+            <div class="mt-5">
+                <p>Nom: <?= $user->name ?></p>
+                <p>Email: <?= $user->email ?></p>
+                <p>Password: <?= $user->password ?></p>
+                <p>Porte-Monnaie: <?= $user->wallet->money ?> <?= $user->wallet->devise ?></p>
+            </div>
+        <?php endforeach; ?>
+
     </div>
 </main>

@@ -9,12 +9,20 @@ use NeutronStars\Form\Bootstrap\XSRFElement;
 use NeutronStars\Form\Form;
 use NeutronStars\Neutrino\Core\Controller;
 
+use App\Cours\User;
+use App\Cours\Wallet;
+
+
 class HomeController extends Controller
 {
     public function index(): void
     {
         $this->render('app.home', [
-            'flashes' => $this->getFlash()
+            'flashes' => $this->getFlash(),
+            'users' => [
+                new User('Alan', 'pro@neutronstars.fr', '1234'),
+                new User('Doe', 'john.doe@email.com', 'john doe')
+            ]
         ]);
     }
 
